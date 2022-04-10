@@ -19,7 +19,8 @@ export function stopJob(name) {
 }
 
 export async function configure(configurator) {
-    for(j in jobs) {
+    const js = Object.values(jobs);
+    for(const j of js) {
         j.start();
     }
 }

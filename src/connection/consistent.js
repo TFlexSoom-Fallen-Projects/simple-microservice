@@ -18,9 +18,15 @@ export async function configure(configurator) {
         pool: config.pool || {}
     });
 
-    for(m in models) {
-        m.classDefine();
+    for(const m of models) {
+        if(config.verboseSchemas) {
+            console.log("Defining Schema For: " + m + " with " + sequelize);
+        }
+
+        m.classDefine(sequelize);
     }
+
+    await sequelize.sync({ force: true });
 }
 
 export function getInstance() {

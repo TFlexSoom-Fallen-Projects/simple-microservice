@@ -25,7 +25,7 @@ export async function configure(configurator) {
         config.options    
     );
 
-    for(m in models) {
+    for(const m of models) {
         m.classDefine();
     }
 }
