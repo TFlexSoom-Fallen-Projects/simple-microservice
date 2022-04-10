@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-microservice",
+  "version": "1.0.0",
+  "description": "Simple NodeJS Microservice container",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Tristan Hilbert (aka TFlexSoom)",
+  "license": "MIT",
+  "dependencies": {
+    "amqplib": "^0.8.0",
+    "crypto-js": "^4.1.1",
+    "express": "^4.17.3",
+    "mariadb": "^3.0.0",
+    "mongoose": "^6.2.10",
+    "redis": "^4.0.6",
+    "sequelize": "^6.18.0"
+  }
+}
