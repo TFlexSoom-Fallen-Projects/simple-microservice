@@ -34,7 +34,7 @@ export default class URLShortenService extends Service {
 
         for(const m in PREFIX_TO_DIRECTORY) {
             if(newMappings[m] === undefined) {
-                const newEntry = await URLShortenService.create({directory: PREFIX_TO_DIRECTORY[m]});
+                const newEntry = await URLPrefixModel.create({directory: PREFIX_TO_DIRECTORY[m]});
             }
         }
     }
@@ -47,7 +47,7 @@ export default class URLShortenService extends Service {
         hasher.update(url);
         var hash = hasher.copy().digest('hex');
         var entry = await URLShortenModel.findOne({ where: { key: hash }});
-        if(entry !== undefined) {
+        if(entry !== null) {
             return {key: entry.key, url: entry.url};
         }
             

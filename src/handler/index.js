@@ -4,6 +4,8 @@ import * as urlShorten from './urlShorten';
 
 const app = express();
 
+app.use(express.json());
+
 app.use(helloWorld.router);
 app.use(urlShorten.router);
 

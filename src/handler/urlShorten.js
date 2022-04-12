@@ -5,14 +5,19 @@ export const router = express.Router({
     caseSensitive: false,
 });
 
-router.all("/", async (req, res, next) => {
-    const url = req.body.url;
+router.post("/", async (req, res, next) => {
+    const body = req.body;
+    const url = body.url;
     const pair = await urlShortenService.INSTANCE.insertNewURL(url);
 
     if(pair.url === url ) {
         res.status(201).send({
             short_url_code: "/" + pair.key,
             url: pair.url
+        });
+    } else {
+        res.status(500).send({
+            error: "Hash Already Exists!",
         });
     }
 });
