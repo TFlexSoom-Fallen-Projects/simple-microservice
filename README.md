@@ -1,12 +1,7 @@
-# nodejs-microservice
-A NodeJS microservice framework including:
-- RESTful API via express
-- Request based authentication via JWt
-- Cacheing via Redis
-- Consistent Database Storage via MariaDB SQL
-- Available Database Storage via MongoDB
-- Message Brokering from RabbitMQ
-- Task Secheduling via node-cron
+# How To Start
+0. Install Node JS from some provider. [Link](https://nodejs.org/en/) Make sure to include npm in your installation.
+1. `npm i` in repo directory
+2. `npm start`
 
 # Author
 Tristan Hilbert (aka TFlexSoom)
